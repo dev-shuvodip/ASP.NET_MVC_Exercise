@@ -77,6 +77,17 @@
                     <td><label class="label" for="age">Age</label></td>
                     <td><label id="age" title="Stuent's Age'">@ViewBag.Student.Age</label></td>
                 </tr>
+                <tr>
+                    <td><label class="label" for="gender">Gender</label></td>
+                    <td>
+                        <select id="gender" title="Select gender">
+                            @foreach (string s in ViewBag.Gender)
+                            {
+                                <option value=@s>@s</option>
+                            }
+                        </select>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
