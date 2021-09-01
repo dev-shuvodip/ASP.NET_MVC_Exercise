@@ -1,8 +1,4 @@
 ﻿using ASP.NET_MVC_Exercise.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace ASP.NET_MVC_Exercise.Controllers
@@ -19,7 +15,7 @@ namespace ASP.NET_MVC_Exercise.Controllers
         {
             return "Hello from Index variant 1!";
         }
-        
+
         /// <summary>
         ///         A method same as the index action. 
         ///         Since, the action name is different from the one mentioned in the default rule, 
