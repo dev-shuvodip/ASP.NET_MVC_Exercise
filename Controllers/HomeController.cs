@@ -24,6 +24,7 @@ namespace ASP.NET_MVC_Exercise.Controllers
         ///         The action name needs to written explicitly.
         /// </summary>
         /// <returns></returns>
+
         public string IndexVariant()
         {
             return "Hello from Index variant!";
