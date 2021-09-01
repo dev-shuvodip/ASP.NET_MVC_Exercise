@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .container {
+            max-width: max-content;
+            margin: 10px 50px 20px 10px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+            padding: 10px;
+        }
+
+        .label {
+            height: 32px;
+            line-height: 32px;
+            margin: 0 4px;
+            color: #666666;
+            vertical-align: top;
+            display: inline-block;
+        }
+
+        .button {
+            max-width: max-content;
+            text-decoration: none;
+            height: 32px;
+            min-width: 80px;
+            background-color: #0078d4;
+            border-color: #0078d4;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        .buttons_table {
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+    <title>CRUD Operation</title>
+</head>
+
+<body>
+    <div class="container" style="float: left;">
+        <h1 style="color: #0078D4; text-shadow: 2px 2px 5px rgb(128, 128, 128, 0.5); padding-bottom: 3px;">
+            Student Form
+        </h1>
+        <br>
+        <table>
+            <tbody>
+                <tr>
+                    <td><label class="label" for="def_id">ID</label></td>
+                    <td><label id="def_id" title="System-generated ID">@ViewBag.Student.ID</label></td>
+                </tr>
+                <tr>
+                    <td><label class="label" for="name">Name</label></td>
+                    <td><label id="name" title="Student's Name'">@ViewBag.Student.Name</label></td>
+                </tr>
+                <tr>
+                    <td><label class="label" for="address">Address</label></td>
+                    <td><label id="address" title="Stuent's Address'">@ViewBag.Student.Address</label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="label" for="qualification">Qualification</label>
+                    </td>
+                    <td><label id="qualification" title="Stuent's Qualification'">@ViewBag.Student.Qualification</label></td>
+                </tr>
+                <tr>
+                    <td><label class="label" for="age">Age</label></td>
+                    <td><label id="age" title="Stuent's Age'">@ViewBag.Student.Age</label></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
+
