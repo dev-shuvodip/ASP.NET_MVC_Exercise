@@ -11,10 +11,11 @@ namespace ASP.NET_MVC_Exercise.Controllers
         ///         An action method to return a string instead of an action result to the View. 
         /// </summary>
         /// <returns></returns>
-        public string IndexVariant1()
-        {
-            return "Hello from Index variant 1!";
-        }
+
+        //public string Index()
+        //{
+        //    return "Hello from Index!";
+        //}
 
         /// <summary>
         ///         A method same as the index action. 
@@ -23,9 +24,9 @@ namespace ASP.NET_MVC_Exercise.Controllers
         ///         The action name needs to written explicitly.
         /// </summary>
         /// <returns></returns>
-        public string IndexVariant2()
+        public string IndexVariant()
         {
-            return "Hello from Index variant 2!";
+            return "Hello from Index variant!";
         }
 
         /// <summary>
@@ -39,9 +40,10 @@ namespace ASP.NET_MVC_Exercise.Controllers
         /// </returns>
         public ActionResult Index()
         {
+            ViewBag.Gender = new string[] { "Male", "Female", " Transgender", "Other" };
             ViewBag.Student = new Student
             {
-                ID = 1782153,
+                ID = 5452,
                 Name = "Shuvodip Ray",
                 Address = "Kolkata",
                 Qualification = "B.Tech",
