@@ -1,0 +1,84 @@
+﻿@model ASP.NET_MVC_Exercise.Models.CustomerData
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .container {
+            max-width: max-content;
+            margin: 10px 50px 20px 10px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+            padding: 10px;
+        }
+
+        .label {
+            height: 32px;
+            line-height: 32px;
+            margin: 0 4px;
+            color: #666666;
+            vertical-align: top;
+            display: inline-block;
+        }
+
+        .button {
+            max-width: max-content;
+            text-decoration: none;
+            height: 32px;
+            min-width: 80px;
+            background-color: #0078d4;
+            border-color: #0078d4;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        .buttons_table {
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+    <title>CRUD Operation</title>
+</head>
+
+<body>
+    <div class="container" style="float: left;">
+        @using (Html.BeginForm("Customer", "Home"))
+        {
+            <table>
+                <tbody>
+                    <tr>
+                        <td><label class="label" for="customerId">ID</label></td>
+                        <td>@Model.CustomerID</td>
+                    </tr>
+                    <tr>
+                        <td><label class="label" for="customerName">Name</label></td>
+                        <td>@Model.CustomerName</td>
+                    </tr>
+                    <tr>
+                        <td><label class="label" for="customerAddress">Address</label></td>
+                        <td>@Model.CustomerAddress</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="label" for="customerContact">Contact</label>
+                        </td>
+                        <td>@Model.CustomerContact</td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        }
+    </div>
+</body>
+
+</html>

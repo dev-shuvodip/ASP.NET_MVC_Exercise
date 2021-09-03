@@ -1,0 +1,136 @@
+﻿@model ASP.NET_MVC_Exercise.Models.Student
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .container {
+            max-width: max-content;
+            margin: 10px 50px 20px 10px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+            padding: 10px;
+        }
+
+        .label {
+            height: 32px;
+            line-height: 32px;
+            margin: 0 4px;
+            color: #666666;
+            vertical-align: top;
+            display: inline-block;
+        }
+
+        .button {
+            max-width: max-content;
+            text-decoration: none;
+            height: 32px;
+            min-width: 80px;
+            background-color: #0078d4;
+            border-color: #0078d4;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        .display-table {
+            width: 100%;
+            border: 1px solid #000;
+        }
+
+        .table-data {
+            width: 25%;
+            text-align: left;
+            vertical-align: top;
+            border: 1px solid #000;
+            border-spacing: 0;
+        }
+    </style>
+    <title>CRUD Operation</title>
+</head>
+
+<body>
+    <div class="container" style="float: left;">
+        @using (Html.BeginForm("Student", "Home"))
+        {
+            <table class="display-table">
+                <thead>
+                    <tr>
+                        <td class="table-data">ID</td>
+                        <td class="table-data">Name</td>
+                        <td class="table-data">Address</td>
+                        <td class="table-data">Qualification</td>
+                        <td class="table-data">Age</td>
+                        <td class="table-data">Gender</td>
+                        <td class="table-data">Student ID</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var listItem in ViewBag.listItemCollection)
+                    {
+                        <tr>
+                            <td class="table-data">@listItem.Id</td>
+                            <td class="table-data">@listItem["Title"]</td>
+                            <td class="table-data">@listItem["Address"]</td>
+                            <td class="table-data">@listItem["Qualification"]</td>
+                            <td class="table-data">@listItem["Age"]</td>
+                            <td class="table-data">@listItem["Gender"]</td>
+                            <td class="table-data">@listItem["CustomID"]</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <br>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><label class="label" for="studentName">Name</label></td>
+                        <td>@Html.EditorFor(v => v.Name)</td>
+                    </tr>
+                    <tr>
+                        <td><label class="label" for="studentAddress">Address</label></td>
+                        <td>@Html.EditorFor(v => v.Address)</td>
+                    </tr>
+                    <tr>
+                        <td><label class="label" for="studentQualification">Qualification</label></td>
+                        <td>@Html.EditorFor(v => v.Qualification)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="label" for="studentAge">Age</label>
+                        </td>
+                        <td>@Html.EditorFor(v => v.Age)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="label" for="studentGender">Gender</label>
+                        </td>
+                        <td>
+                            @Html.DropDownListFor(v => v.Gender, new List<SelectListItem>
+                            {
+                                new SelectListItem() { Text = "", Value = "" },
+                                new SelectListItem() { Text = "Male", Value = "Male" },
+                                new SelectListItem() { Text = "Female", Value = "Female" },
+                                new SelectListItem() { Text = "Transgender", Value = "Transgender" },
+                                new SelectListItem() { Text = "Other", Value = "Other" },
+                            })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" /></td>
+                        <td><input type="reset" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        }
+    </div>
+</body>
+
+</html>
